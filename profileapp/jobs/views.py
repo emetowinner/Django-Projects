@@ -2,5 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def winner(request):
-    return HttpResponse('<p> Welcome to my page! </p>')
+def home(request):
+    context = {}
+    return render(request,'jobs/home.html',context)

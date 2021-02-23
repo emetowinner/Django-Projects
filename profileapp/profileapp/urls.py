@@ -19,5 +19,5 @@ from jobs import views as jobsviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('winner/',jobsviews.winner,name='winner')
+    path('home/',jobsviews.home,name='home')
 ]
