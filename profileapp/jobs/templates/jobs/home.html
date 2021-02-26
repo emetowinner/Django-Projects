@@ -47,7 +47,7 @@
                         <div class="btn-group">
                         <a href="{% url 'detail' job.pk %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                         </div>
-                        <small class="text-muted">9 mins</small>
+                        <small class="text-muted">{{ job.view_count }} Views</small>
                     </div>
                     </div>
                 </div>

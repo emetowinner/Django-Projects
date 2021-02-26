@@ -17,20 +17,6 @@
 
 <main>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-          <img src="{% static 'winner.jpg' %}" height="300" alt="">
-        <h1 class="fw-light">Winner Emeto</h1>
-        <p class="lead text-muted">Hi my name is Winner, I enjoy making website and apps and i also enjoy watching movies.</p>
-        <p>
-          <a href="mailto:winneremeto@gmail.com" class="btn btn-primary my-2">Email Me</a>
-          <a href="https://linkedin.com/in/emetowinner" class="btn btn-secondary my-2">Connect</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
   <div class="album py-5 bg-light">
     <div class="container">
 
@@ -48,7 +34,7 @@
                         <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
                         <a href="/"><button type="button" class="btn btn-sm btn-outline-secondary">Back</button></a>
                         </div>
-                        <small class="text-muted">9 mins</small>
+                        <small class="text-muted">{{ jobs.view_count }} Views</small>
                     </div>
                     </div>
                 </div>

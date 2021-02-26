@@ -9,6 +9,9 @@ def home(request):
 
 def detail_view(request,job_id):
     job = get_list_or_404(Job,pk=job_id)
-    print(job)
-    context = {'job':job}
+    job[0].view_count += 1
+    job[0].save()
+    context = {
+        'job':job,
+        }
     return render(request,'jobs/detail.html',context)
