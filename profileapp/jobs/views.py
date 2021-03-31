@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_list_or_404
+from django.shortcuts import render,get_list_or_404,redirect
 from django.contrib import messages
 from .models import Job
 from .forms import PostForm
@@ -11,24 +11,36 @@ def home(request):
 def detail_view(request,job_id):
     job = get_list_or_404(Job,pk=job_id)
     job[0].view_count += 1
-    job[0].save()
+    job[0].save()   
     context = {
-        'job':job,
+        'jobs':job,
         }
     return render(request,'jobs/detail.html',context)
 
-def update(request, job_id):
-    job = Job.objects.get(pk=job_id)
-    if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES, instance=job)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Post updated successfully')
-            return render(request, 'jobs/update.html', {'form': form})
+def update(request,id=0):
+    if request.method == 'GET':
+        if id==0:
+            form = PostForm()
+            context = {'form':form,}
         else:
+            job = Job.objects.get(pk=id)
             form = PostForm(instance=job)
-            messages.error(request, 'Something went wrong try again')
-            return render(request, 'jobs/update.html', {'form': form})
+            context = {'form':form,}
+
+        return render(request,'jobs/update.html',context)
     else:
-        form = PostForm(instance=job)
-        return render(request, 'jobs/update.html', {'form': form})
+        if id==0:
+            form = PostForm(request.POST,request.FILES)
+        else:
+            job = Job.objects.get(pk=id)
+            form = PostForm(request.POST,request.FILES,instance=job)
+
+        if form.is_valid():
+            print('It got to this point o')
+            form.save()
+        return redirect('home')
+
+def delete_job(request,id):
+    job = Job.objects.get(pk=id)
+    job.delete()
+    return redirect('home')
