@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   font-size: 15px;
   font-family: 'Gilroy Semibold';
-  font-weight: 600;
+  font-weight: lighter;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -261,6 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Get Startet Button */
 .get-started-btn {
+  background: #25B1FF;
   color: #fff;
   border-radius: 4px;
   padding: 7px 25px 8px 25px;
@@ -273,13 +274,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .get-started-btn:hover {
   background: #25B1FF;
-  color: #343a40;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
   .get-started-btn {
-    margin: 0 48px 0 0;
-    padding: 7px 20px 8px 20px;
+    /* margin: 0 48px 0 0;
+    padding: 7px 20px 8px 20px; */
   }
 }
 
@@ -476,14 +477,17 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background-color: #000E27;
+  background: #000E27;
+  ;
+  /* background: url("../img/hero-bg.jpg") top center; */
   background-size: cover;
   position: relative;
 }
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.6); */
   position: absolute;
   bottom: 0;
   top: 0;
@@ -493,7 +497,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .container {
   position: relative;
-  padding-top: 74px;
+  padding-top: 200px;
+  padding-bottom: 200px;
   text-align: center;
 }
 
@@ -623,7 +628,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 28px;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .about .content ul {
@@ -699,27 +704,6 @@ section {
   padding-top: 20px;
 }
 
-.features .icon-boxs {
-  padding-left: 15px;
-}
-
-.features .icon-boxs h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 5px 0 10px 60px;
-}
-
-.features .icon-boxs i {
-  font-size: 48px;
-  float: left;
-  color: #25B1FF;
-}
-
-.features .icon-boxs p {
-  font-size: 15px;
-  color: #848484;
-  margin-left: 60px;
-}
 #hero .icon-box {
   padding: 2px 2px;
   transition: ease-in-out 0.3s;
@@ -877,18 +861,20 @@ section {
   display: inline-block;
   padding: 8px 15px 10px 15px;
   font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-  text-transform: uppercase;
+  font-weight: lighter;
+  line-height: 0;
+  /* text-transform: uppercase; */
   color: #fff;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #fff;
-  background: #25B1FF;
+  transition: ease-in-out 0.3s;
+  border: 1px solid rgb(37, 177, 255);
+  /* background: #25B1FF; */
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -900,12 +886,12 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background: rgba(21, 21, 21, 0.6);
+  /* background: rgba(21, 21, 21, 0.6); */
 }
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(21, 21, 21, 0.6);
+  /* background: rgba(21, 21, 21, 0.6); */
   position: absolute;
   left: 0;
   right: 0;
