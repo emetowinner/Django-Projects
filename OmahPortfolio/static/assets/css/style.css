@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family:'Gilroy Regular';
+  font-family:'Poppins';
   color: #000E27;
 }
 
@@ -23,7 +23,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins";
 }
 
 /*--------------------------------------------------------------
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   transition: 0.3s;
   font-size: 15px;
-  font-family: 'Gilroy Semibold';
+  font-family: 'Poppins';
   font-weight: lighter;
 }
 
@@ -508,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 64px;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
 }
 
 #hero h1 span {
@@ -521,21 +521,21 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
 }
 
-#hero .icon-boxs {
+#footer .icon-boxs {
   padding: 2px 2px;
   transition: ease-in-out 0.3s;
-  border: 1px solid rgb(37, 177, 255);
+  /* border: 1px solid rgb(0, 14, 39); */
   height: 100%;
   text-align: center;
 }
 
-#hero .icon-boxs i {
+#footer .icon-boxs i {
   font-size: 32px;
   /* line-height: 1; */
-  color: #25B1FF;
+  color: #000e27;
 }
 
-#hero .icon-boxs h3 {
+#footer .icon-boxs h3 {
   font-weight: 700;
   margin: 10px 0 0 0;
   padding: 0;
@@ -544,17 +544,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 26px;
 }
 
-#hero .icon-boxs h3 a {
+#footer .icon-boxs h3 a {
   color: #fff;
   transition: ease-in-out 0.3s;
 }
 
-#hero .icon-boxs h3 a:hover {
+#footer .icon-boxs h3 a:hover {
   /* color: #25B1FF; */
 }
 
-#hero .icon-boxs:hover {
-  border-color: #25B1FF;
+#footer .icon-boxs:hover {
+  border-color: #000e27;
 }
 
 @media (min-width: 1024px) {
@@ -598,9 +598,9 @@ section {
   line-height: 1px;
   margin: 0 0 5px 0;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #aaaaaa;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
 }
 
 .section-title h2::after {
@@ -608,7 +608,7 @@ section {
   width: 120px;
   height: 1px;
   display: inline-block;
-  background: #ffde9e;
+  background: #25b1ff;
   margin: 4px 10px;
 }
 
@@ -617,8 +617,8 @@ section {
   margin: 0;
   font-size: 36px;
   font-weight: 700;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  /* text-transform: uppercase; */
+  font-family: "Poppins";
   color: #fff;
 }
 
@@ -823,7 +823,7 @@ section {
 }
 
 .cta .cta-btn {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins";
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -1007,7 +1007,7 @@ section {
 .counts .content .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 50px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins";
   font-size: 14px;
   color: #fff;
 }
@@ -1018,7 +1018,7 @@ section {
   margin-top: 20px;
   color: #fff;
   font-size: 15px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   transition: ease-in-out 0.3s;
 }
 
@@ -1492,7 +1492,7 @@ section {
   list-style: none;
   padding: 0;
   font-size: 15px;
-}
+}2
 
 .portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
@@ -1527,9 +1527,9 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: black;
+  background: #fff;
   padding: 0 0 30px 0;
-  color: #fff;
+  color: #000;
   font-size: 14px;
 }
 
@@ -1560,7 +1560,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins";
   color: #fff;
 }
 
@@ -1673,5 +1673,5 @@ section {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
-  color: #fff;
+  color: #000;
 }
