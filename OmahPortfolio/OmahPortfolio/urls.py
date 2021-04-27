@@ -27,4 +27,9 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "Omah Portfolio Portal"
+admin.site.site_title = "Omah Portfolio Portal Administration"
+admin.site.index_title = "Welcome To Omah Portfolio Portal Administration"

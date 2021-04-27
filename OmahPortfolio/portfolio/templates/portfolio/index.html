@@ -2,11 +2,11 @@
 
 {% load static %}
 {% block content %}
-<li class="active"><a href="index.html">Home</a></li>
+<li class="active"><a href="/">Home</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="{% url 'about' %}">About</a></li>
-<li><a href="#">Download CV</a></li>
+<li><a href="{{ asset.cv }}">Download CV</a></li>
 
 </ul>
 </nav><!-- .nav-menu -->
@@ -36,7 +36,7 @@
                 text-transform: capitalize;
                 
                 color: #FFFFFF;"> Hello, I’m <span style="color: #25b1ff;"> Esther! </span> </span>
-                <p class="p-3">  A   User Interface & Experience Designer, Keen on Solving Problems Through Purposeful Design </p>
+                <p class="p-3"> {{ personalData.intro }} </p>
                 <a href="#contact" class="get-started-btn scrollto">Contact Me</a>
               </div>
             </div>
@@ -77,48 +77,21 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="">
-              <div class="card" style="background: #152138;!important background-color: #152138;!important">
-                <img src="https://i.ytimg.com/vi/kynoEFQNEq8/maxresdefault.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="pt-3 card-title">Buy Easy E-Commerce Mobile App</h5>
-                  <p class="card-text" style="color: #939393;">An e-conmmerce mobile app which allows users shop online and 
-                    get it delivered within 24 hours.</p>
-                  <a href="{% url 'portfolioDetail' %}" class="portfolio-wrap">Read case study <img style="color: #25b1ff;" width="70" height="40" src="{% static 'assets/img/right-arrow.svg' %}" alt="right-arrow"> </a>
+          {% for usecase in usecases %}
+            <div class="col-lg-4 col-md-6 portfolio-item">
+              <div class="">
+                <div class="card" style="background: #152138;!important background-color: #152138;!important">
+                  <img src="{{ usecase.image.url }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="pt-3 card-title">{{ usecase.title }}</h5>
+                    <p class="card-text" style="color: #939393;">{{ usecase.description }}</p>
+                    <a target="_blank" href="{{ usecase.url }}" class="portfolio-wrap">Read case study <img style="color: #25b1ff;" width="70" height="40" src="{% static 'assets/img/right-arrow.svg' %}" alt="right-arrow"> </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="">
-              <div class="card" style="background: #152138;!important background-color: #152138;!important">
-                <img src="https://i.ytimg.com/vi/kynoEFQNEq8/maxresdefault.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="pt-3 card-title">Buy Easy E-Commerce Mobile App</h5>
-                  <p class="card-text" style="color: #939393;">An e-conmmerce mobile app which allows users shop online and 
-                    get it delivered within 24 hours.</p>
-                  <a href="{% url 'portfolioDetail' %}" class="portfolio-wrap">Read case study <img style="color: #25b1ff;" width="70" height="40" src="{% static 'assets/img/right-arrow.svg' %}" alt="right-arrow"> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="">
-              <div class="card" style="background: #152138;!important background-color: #152138;!important">
-                <img src="https://i.ytimg.com/vi/kynoEFQNEq8/maxresdefault.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="pt-3 card-title">Buy Easy E-Commerce Mobile App</h5>
-                  <p class="card-text" style="color: #939393;">An e-conmmerce mobile app which allows users shop online and 
-                    get it delivered within 24 hours.</p>
-                  <a href="{% url 'portfolioDetail' %}" class="portfolio-wrap">Read case study <img style="color: #25b1ff;" width="70" height="40" src="{% static 'assets/img/right-arrow.svg' %}" alt="right-arrow"> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
 
 
         </div>
@@ -136,32 +109,21 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          {% for ui in UIProject %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="">
-              <div class="card" style="background: #152138;!important background-color: #152138;!important">
-                <img src="https://blog.tubikstudio.com/wp-content/uploads/2017/06/bright-vibe-calendar-UI-design.png" class="" alt="...">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src="{{ ui.image.url }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>{{ ui.title }}</h4>
+                  <p>{{ ui.description }}</p>
+                  <div class="portfolio-links">
+                    <a href="{{ ui.url }}" title="More Details"><i class="bx bx-link"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="">
-              <div class="card" style="background: #152138;!important background-color: #152138;!important">
-                <img src="https://blog.tubikstudio.com/wp-content/uploads/2017/06/bright-vibe-calendar-UI-design.png" class="" alt="...">
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="">
-              <div class="card" style="background: #152138;!important background-color: #152138;!important">
-                <img src="https://blog.tubikstudio.com/wp-content/uploads/2017/06/bright-vibe-calendar-UI-design.png" class="" alt="...">
-                
-              </div>
-            </div>
-          </div>
+          {% endfor %}
 
 
         </div>
@@ -176,59 +138,60 @@
 
         <div class="section-title">
           <h2 style="color: #25b1ff;">Contact</h2>
-          <p>Contact Me</p>
+          <p>Reach out to me</p>
         </div>
         <div class="row mt-5 justify-content-center">
 
-          <!-- <div class="col-lg-4">
+          <div class="col-lg-4">
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h5 style="padding-left: 4rem;">Location:</h5>
+                <p>{{ personalData.address }}</p>
               </div>
 
               <div class="email">
                 <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
+                <h5 style="padding-left: 4rem;">Email:</h5>
+                <p>{{ personalData.email }}</p>
               </div>
 
               <div class="phone">
                 <i class="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h5 style="padding-left: 4rem;">Call:</h5>
+                <p>{{ personalData.phone }}</p>
               </div>
 
             </div>
 
-          </div> -->
+          </div>
 
-          <div class="col-lg-10 mt-2 mt-lg-0">
+          <div class="col-lg-8 mt-2 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="mailto:queeneomah@gmail.com" method="" class="php-email-form">
+              {% csrf_token %}
               <div class="form-group">
                 <label for="name" class="form-label">Enter name</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 8 chars of name" />
-                <div class="validate"></div>
+                <input type="text" class="form-control" name="name" id="name" placeholder="" data-msg="Please enter at least 8 chars of name" />
+                <!-- <div class="validate"></div> -->
               </div>
 
               <div class="form-group">
                 <label for="email" class="form-label">Enter email address</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 8 chars of email" />
-                <div class="validate"></div>
+                <input type="email" class="form-control" name="email" id="email" placeholder="" data-msg="Please enter at least 8 chars of email" />
+                <!-- <div class="validate"></div> -->
               </div>
 
               <div class="form-group">
                 <label for="message" class="form-label">Your message</label>
-                <textarea class="form-control" id="message" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder=""></textarea>
-                <div class="validate"></div>
+                <textarea class="form-control" id="message" name="message" rows="5" data-msg="Please write something for us" placeholder=""></textarea>
+                <!-- <div class="validate"></div> -->
               </div>
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
+              </div> -->
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
 
